@@ -37,7 +37,16 @@
             </p>
             <label for="paginaWeb">Página Web: </label>
             <input type="url" name="paginaWeb"><br>
-            
+            <label for="opinion">Opinión: </label><br>
+            <textarea name="opinion">Escriba aquí...</textarea><br>
+            Películas:
+            <select name="peliculas">
+                <option value="Spiderman">Spiderman</option>
+                <option value="Superman">Superman</option>
+                <option value="Batman">Batman</option>
+                <option value="Robin">Robin</option>
+            </select>
+            <br>
             <input type="submit" value="Enviar">
         </form>
     </body>
