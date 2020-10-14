@@ -6,12 +6,22 @@
     </head>
     <body>
         <h1>Validar formularios en PHP</h1>
+        
+        <?php
+            if(isset($_GET['error'])) {
+                $error = $_GET['error'];
+                if($error != 'OK') {
+                    echo '<strong style="color:red">'.$error.'</strong><br>';
+                }
+            }
+        ?>
+        
         <form action="procesar_formulario.php" method="POST" enctype="multipart/form-data">
             <label for="nombre">Nombre: </label> 
             <input type="text" name="nombre" required="true" pattern="[A-Za-z]+"><br>
             
             <label for="apellidos">Apellidos: </label>
-            <input type="text" name="apellidos" required="true" pattern="[A-Za-z]+"><br>
+            <input type="text" name="apellidos" pattern="[A-Za-z]+[ ]?[A-Za-z]+"><br>
             
             <label for="edad">Edad: </label>
             <input type="number" name="edad" required="true" pattern="[0-9]+"><br>
