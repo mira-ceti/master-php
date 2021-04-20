@@ -5,7 +5,7 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `password`, `fecha
             (NULL, 'admim', 'dba mysql', 'admin.mysql@gmail.com', '123456', '2021-04-01');
 
 --Me muestra el 2 y 3 registros:
-SELECT * FROM `usuarios` WHERE 1 LIMIT 1,2
+SELECT * FROM `usuarios` WHERE 1 LIMIT 1,2;
 
 id	nombre	        apellidos	        email	                 password	fecha	
 2	Juan Manuel	Fernández de la Cal	jmcal@gmail.com	         123456	        2021-04-14	
@@ -43,4 +43,4 @@ SELECT e.id, e.titulo, u.nombre AS 'Autor', c.nombre AS 'Categoría'
 SELECT c.nombre, COUNT(e.id) 
     FROM entradas e 
     RIGHT JOIN categorias c ON c.id = e.categoria_id 
-    GROUP BY e.categoria_id
+    GROUP BY e.categoria_id;

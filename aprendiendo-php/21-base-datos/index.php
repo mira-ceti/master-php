@@ -1,6 +1,6 @@
 <?php
 
-$conexion = mysqli_connect("127.0.0.1", "root", "", "blog_master");
+$conexion = mysqli_connect("127.0.0.1", "root", "", "blog_master", "3307");
 
 if(mysqli_connect_errno()) {
     echo "<h3>Error al conectar con la BBDD ".mysqli_connect_error()."<h3>";
@@ -10,11 +10,12 @@ else {
 }
 
 //Consulta para sacar formatos con carácteres extraños ñs y acentos:
-mysqli_query($conexion, "SET NAMES 'utf-8'");
+$conexion -> set_charset("utf8");
 
 //Consulta Normal:
 
-$sql = "INSERT INTO usuarios VALUES (NULL, 'Alonso', Sánchez Pertierra', 'alonsanchez@gmail.com', '123456', '2020-03-12')";
+$sql = "INSERT INTO usuarios VALUES (NULL, 'Alonso', 'Sánchez Pertierra', 'alonsanchez@gmail.com', '123456', '2020-03-12')";
+utf8_encode($sql);
 $insert = mysqli_query($conexion, $sql);
 
 if($insert) {
@@ -27,7 +28,7 @@ else {
 $query = mysqli_query($conexion, "SELECT * FROM usuarios");
 
 while ($row = mysqli_fetch_assoc($query)) {
-    echo "<h3>".$row['nombre']."</h3>";
+    echo "<h3>".$row['nombre']." ".$row['apellidos']."</h3>";
 }
     
 

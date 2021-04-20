@@ -1,4 +1,4 @@
 Esto es un fichero de texto con las instrucciones
 para crear un proyecto con PHP.
 Siga las instrucciones cuidadosamente:
-1. Lea el Tutorial PHP.1. Lea el Tutorial PHP.1. Lea el Tutorial PHP.1. Lea el Tutorial PHP.
+1. Lea el Tutorial PHP.1. Lea el Tutorial PHP.1. Lea el Tutorial PHP.1. Lea el Tutorial PHP.1. Lea el Tutorial PHP.
