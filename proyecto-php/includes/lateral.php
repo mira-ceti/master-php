@@ -15,10 +15,18 @@
                 </div>
                 
                 <div id="register" class="bloque">
-                    <?php if(isset($_SESSION['errores'])): ?>
-                        <?php echo var_dump($_SESSION['errores'])?>
-                    <?php endif; ?>
                     <h3>Regístrate</h3>
+                    
+                    <?php if(isset($_SESSION['completado'])): ?>
+                        <div class="alerta alerta_exito">
+                            <?=$_SESSION['completado'];?>
+                        </div>
+                    <?php elseif(isset($_SESSION['errores']['general'])): ?>
+                        <div class="alerta alerta_error">
+                            <?=$_SESSION['errores']['general'];?>
+                        </div>
+                    <?php endif; ?>
+        
                     <form action="registro.php" method="POST">
                         <label for="nombre">Nombre</label>
                         <input type="text" name="nombre"/>
